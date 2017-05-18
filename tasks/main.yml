@@ -1,0 +1,12 @@
+---
+
+- name: Ensure download directory is present
+  file: path={{ download_dir }} state=directory
+
+- include: build-check-mk-livestatus.yml
+
+- name: lineinfile - configure nagios.cfg for check-mk
+  lineinfile: "dest={{ nagios_config_file }} regexp='{{ item.src }}' line='{{ item.value }}'"
+  with_items:
+  - { src: "^broker_module=" , value: "broker_module={{ nagios_config_broker_module }}" }
+  notify: Restart Nagios

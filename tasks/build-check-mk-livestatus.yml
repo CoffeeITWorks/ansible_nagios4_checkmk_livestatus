@@ -1,0 +1,25 @@
+---
+
+- name: Get check-mk-livestatus
+  get_url: url={{ check_mk_livestatus_url }} dest={{ download_dir }}/{{ mk_livestatus_src }}.tar.gz
+  register: check_mk_livestatus_download
+
+- name: Delete check-mk-livestatus file when it downloads new version
+  file: 
+    path: "{{ item }}"
+    state: absent
+  with_items: 
+    - "{{ download_dir }}/{{ mk_livestatus_src }}"
+    - /usr/local/lib/mk-livestatus/livestatus.o
+  when: check_mk_livestatus_download.changed
+
+- name: Unpack check-mk-livestatus source files
+  shell: cd {{ download_dir }} && tar -xzvf {{ mk_livestatus_src }}.tar.gz creates={{ download_dir }}/{{ mk_livestatus_src }}
+
+# Info: https://mathias-kettner.de/checkmk_livestatus.html
+- name: Configure check-mk-livestatus
+  shell: cd {{ download_dir }}/{{ mk_livestatus_src }} && ./configure --with-nagios4 creates={{ download_dir }}/{{ mk_livestatus_src }}/Makefile
+
+- name: Make Install check-mk-livestatus
+  shell: cd {{ download_dir }}/{{ mk_livestatus_src }} && make install creates=/usr/local/lib/mk-livestatus/livestatus.o
+ 
