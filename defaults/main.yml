@@ -9,7 +9,7 @@ check_mk_livestatus_url: 'https://raw.githubusercontent.com/pablodav/checkmk-liv
 
 # This is the directory where the Plugin source files will be placed, this should be
 # the directory which is created when the download file is unpacked when runnint
-mk_livestatus_src: 'livestatus-1.2.8p26'
+mk_livestatus_src: 'livestatus_1.2.8p26'
 
 nagios_etc: '/usr/local/nagios/etc'
 nagios_config_cfg_dir: "{{ nagios_etc }}/conf.d"
