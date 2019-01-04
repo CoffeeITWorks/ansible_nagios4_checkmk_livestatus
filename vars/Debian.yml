@@ -1,0 +1,3 @@
+---
+
+checkmk_deps: [ "g++", "make", "libc6-dev", "libstdc++6" ]
