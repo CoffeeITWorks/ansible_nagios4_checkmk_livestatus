@@ -1,3 +1,3 @@
 ---
 
-checkmk_deps: [ "g++", "make", "libc6-dev", "libstdc++6", "build-essential" ]
+checkmk_deps: [ "gcc", "make", "libc6-dev", "libstdc++6", "build-essential" ]
