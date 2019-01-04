@@ -6,7 +6,9 @@
     - test_nagios_plugins
 
 - name: Install checkmk dependencies
-  package: "{{ checkmk_deps }}"
+  apt:
+    name: "{{ checkmk_deps }}"
+    state: present
 
 - name: Ensure download directory is present
   file: path={{ download_dir }} state=directory
