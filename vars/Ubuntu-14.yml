@@ -1,3 +1,4 @@
 ---
 
-checkmk_deps: [ "gcc", "make", "libc6-dev", "libstdc++6-4.7-dev", "build-essential" ]
+checkmk_deps: [ "gcc", "make", "libc6-dev", "libstdc++6-4.7-dev", "build-essential",
+                "librrd-dev", "rrdtool" ]
