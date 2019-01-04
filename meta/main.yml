@@ -8,9 +8,11 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - trusty
+    - xenial
+    - bionic
   galaxy_tags:
-  - Monitoring
-  - Infraestructure
+  - monitoring
+  - infraestructure
 allow_duplicates: no
 # Dependencies are only commented due that I prefer to explicit define it on my site.yml
 #dependencies:
