@@ -4,7 +4,8 @@
 download_dir: "{{ ansible_env.HOME }}/check-mk"
 
 # URL from: http://mathias-kettner.com/check_mk_download_source.html
-check_mk_livestatus_url: 'http://mathias-kettner.com/download/mk-livestatus-1.5.0p9.tar.gz'
+# check_mk_livestatus_url: 'http://mathias-kettner.com/download/mk-livestatus-1.2.8p22.tar.gz'
+check_mk_livestatus_url: 'https://mathias-kettner.de/support/1.5.0p9/mk-livestatus-1.5.0p9.tar.gz'
 
 # This is the directory where the Plugin source files will be placed, this should be
 # the directory which is created when the download file is unpacked when runnint
