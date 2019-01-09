@@ -1,6 +1,10 @@
 ---
 
+- name: restart nagios
+  service: name=nagios state=restarted
+
 - name: systemctl daemon-reload
   systemd:
     daemon_reload: yes
   when: systemd_enabled
+  notify: Restart Nagios
