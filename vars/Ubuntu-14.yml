@@ -2,3 +2,5 @@
 
 checkmk_deps: [ "g++", "gcc", "make", "libc6-dev", "libstdc++6-4.7-dev", "build-essential",
                 "librrd-dev", "rrdtool", "libboost-dev" ]
+
+systemd_enabled: false

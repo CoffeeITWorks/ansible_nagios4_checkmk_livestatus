@@ -1,0 +1,6 @@
+---
+
+- name: systemctl daemon-reload
+  systemctl:
+    daemon_reload: yes
+  when: systemd_enabled
