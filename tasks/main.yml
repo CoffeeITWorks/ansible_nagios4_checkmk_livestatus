@@ -1,6 +1,6 @@
 ---
 
-- include: multi_os.yml
+- import_tasks: multi_os.yml
   tags:
     - config_nagios_plugins
     - test_nagios_plugins
@@ -13,7 +13,7 @@
 - name: Ensure download directory is present
   file: path={{ download_dir }} state=directory
 
-- include: build-check-mk-livestatus.yml
+- import_tasks: build-check-mk-livestatus.yml
 
 - name: lineinfile - configure nagios.cfg for check-mk
   lineinfile: "dest={{ nagios_config_file }} regexp='{{ item.src }}' line='{{ item.value }}'"
